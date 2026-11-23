@@ -1803,7 +1803,9 @@ familyRoles = [
                 formIdentityData.identity[fieldId] = this.identityObj[fieldId];
                 if (this.copFields.includes(selectedFieldId)) {
                   const copValue = this.userForm.controls[selectedFieldId].value;
-                  if ((this.userForm.controls[appConstants.COP_FIELDS.DATE_OF_BIRTH].value == "Y" || this.userForm.controls[appConstants.COP_FIELDS.DATE_OF_BIRTH].value == true) && this.currentAgeCop <= "15") {
+                  if(valueToSet != "") { // for new requirement, if the value is set, then disable the field
+                    this.userForm.controls[fieldId + "_eng"].disable();
+                  } else if ((this.userForm.controls[appConstants.COP_FIELDS.DATE_OF_BIRTH].value == "Y" || this.userForm.controls[appConstants.COP_FIELDS.DATE_OF_BIRTH].value == true) && this.currentAgeCop <= "15") {
                     this.userForm.controls[fieldId + "_eng"].enable();
                   } else if ((this.userForm.controls[appConstants.COP_FIELDS.CITIZENSHIP_TYPE].value == "Y" || this.userForm.controls[appConstants.COP_FIELDS.CITIZENSHIP_TYPE].value == true) && this.currentAgeCop <= "15") {
                     this.userForm.controls[fieldId + "_eng"].disable();
@@ -1825,7 +1827,9 @@ familyRoles = [
                 formIdentityData.identity[fieldId] = this.identityObj[fieldId];
                 if (this.copFields.includes(selectedFieldId)) {
                   const copValue = this.userForm.controls[selectedFieldId].value;
-                  if ((this.userForm.controls[appConstants.COP_FIELDS.DATE_OF_BIRTH].value == "Y" || this.userForm.controls[appConstants.COP_FIELDS.DATE_OF_BIRTH].value == true) && this.currentAgeCop <= "15") {
+                  if(valueToSet != "") { // for new requirement, if the value is set, then disable the field
+                    this.userForm.controls[fieldId].disable();
+                  } else if ((this.userForm.controls[appConstants.COP_FIELDS.DATE_OF_BIRTH].value == "Y" || this.userForm.controls[appConstants.COP_FIELDS.DATE_OF_BIRTH].value == true) && this.currentAgeCop <= "15") {
                     this.userForm.controls[fieldId].enable();
                   } else if ((this.userForm.controls[appConstants.COP_FIELDS.CITIZENSHIP_TYPE].value == "Y" || this.userForm.controls[appConstants.COP_FIELDS.CITIZENSHIP_TYPE].value == true)) {
                     this.userForm.controls[fieldId].enable();
