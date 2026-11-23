@@ -60,8 +60,8 @@
                 <ng-template #content  >
                   <td >
                     <span *ngIf="previewData[controlId][i].label;then displayLabel else displayValue"></span>
-                    <ng-template #displayLabel >{{previewData[controlId][i].label | uppercase}}</ng-template>
-                    <ng-template #displayValue>{{previewData[controlId][i].value | uppercase}}</ng-template>
+                    <ng-template #displayLabel >{{previewData[controlId][i].label | uppercase }}</ng-template>
+                    <ng-template #displayValue>{{previewData[controlId][i].value | uppercase }}</ng-template>
                   </td><br/>
                   <i *ngIf="!last"> / </i>
                 </ng-template>
@@ -92,12 +92,12 @@
         <div class="preview__file-container">
           <table style="width:100%" *ngIf="documentMapObject">
             <tr class="preview__file__table__header">
-              <td *ngFor="let object of documentMapObject">{{ object.name | uppercase}}</td>
+              <td *ngFor="let object of documentMapObject">{{ object.name  | uppercase}}</td>
             </tr>
             <tr class="preview__file__table__data">
               <td *ngFor="let object of documentMapObject">
-                <p *ngIf="object.fileName !== undefined">{{ object.fileName | uppercase}}</p>
-                <p class="{{object.class}}" *ngIf="object.fileName === undefined">{{ previewLabels.text_not_uploaded | uppercase}}
+                <p *ngIf="object.fileName !== undefined">{{ object.fileName  | uppercase}}</p>
+                <p class="{{object.class}}" *ngIf="object.fileName === undefined">{{ previewLabels.text_not_uploaded  | uppercase}}
                 </p>
               </td>
             </tr>
